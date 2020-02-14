@@ -6,7 +6,7 @@ export function assert(b: boolean, message: string = ""): void {
     }
 }
 
-export function assertExists<T>(v: T | null | undefined): T {
+export function assertDefined<T>(v: T | null | undefined): T {
     if (v !== undefined && v !== null)
         return v;
     else
@@ -14,16 +14,9 @@ export function assertExists<T>(v: T | null | undefined): T {
 }
 
 export function defaultValue<T>(v: T | undefined, fallback: T): T {
-    return (v !== undefined) ? v : fallback;
+    return (v !== undefined && v !== null) ? v : fallback;
 }
 
 export function defined<T>(v: T | undefined): boolean {
-    return v !== undefined;
-}
-
-export function arrayRemove<T>(L: T[], n: T): number {
-    const idx = L.indexOf(n);
-    assert(idx >= 0);
-    L.splice(idx, 1);
-    return idx;
+    return v !== undefined && v !== null;
 }
