@@ -27,10 +27,6 @@ module.exports = {
           name: '[name]-[sha1:hash:hex:20].[ext]',
         },
       },
-      {
-        test: /\.glsl$/,
-        loader: 'raw-loader',
-      },
     ],
   },
   plugins: [
