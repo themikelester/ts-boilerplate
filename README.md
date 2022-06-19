@@ -34,9 +34,11 @@ _This template doesn't rely on any external dependencies or services._
    ```sh
    gh repo create <MyRepoName> --template https://github.com/themikelester/ts-boilerplate.git
    ```
-2. Modify GITHUB_URL and GTAG_ID in webpack.common.js 
+2. Modify per-project fields in webpack.common.js 
    ```js
    // @NOTE: These need to be updated per-project
+   const WEB_TITLE = '<SomeTitle>'
+   const WEB_DESC = '<SomeDescription>'
    const GITHUB_URL = 'https://github.com/<username>/<MyRepoName>';
    const GTAG_ID = <SomeGoogleAnalyticsID>;
    ```

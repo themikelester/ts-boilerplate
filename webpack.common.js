@@ -6,9 +6,12 @@ const path = require('path');
 const webpack = require('webpack');
 
 // @NOTE: These need to be updated per-project
-const COMMIT_HASH = gitRevision.commithash();
+const WEB_DESC = 'A boilerplate base for Typescript and WASM projects'
+const WEB_TITLE = 'Boilerplate'
 const GITHUB_URL = 'https://github.com/themikelester/ts-boilerplate';
 const GTAG_ID = 'Some Google Analytics ID';
+
+const COMMIT_HASH = gitRevision.commithash();
 
 module.exports = {
   entry: {
@@ -55,12 +58,15 @@ module.exports = {
       chunks: ['main'],
       filename: 'index.html',
       template: './src/index.html',
-      gtagId: GTAG_ID
+      gtagId: GTAG_ID,
+      title: WEB_TITLE,
+      desc: WEB_DESC,
     }),
     new HtmlWebpackPlugin({
       chunks: ['embed'],
       filename: 'embed.html',
       template: './src/embed.html',
+      title: WEB_TITLE,
     }),
   ],
 };
