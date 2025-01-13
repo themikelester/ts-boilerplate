@@ -56,6 +56,11 @@ _This template doesn't rely on any external dependencies or services._
    ```sh
    yarn install
    ```
+6. (Optional) If errors are encountered during the previous step, there are likely some outdated package dependencies. Run the following to update all minor versions for packages listed in `package.json`
+   ```sh
+   yarn upgrade
+   ```
+   If you're feeling generous, push the updated `yarn.lock` back up to here.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
